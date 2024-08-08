@@ -1,0 +1,125 @@
+.hide-me {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    opacity: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+a.has-secondary ~ button.secondary-expand {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+
+    &::before {
+        content: '▼';
+        margin-right: 5px;
+    }
+
+    &[aria-expanded="true"]::before {
+        content: '▶';
+    }
+
+    &:not(:focus-visible,[aria-expanded="true"]) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+
+
+    }
+}
+
+div.secondary {
+    width: 50%;
+    margin-left: 50%;
+    border-left: 1px solid black;
+    display: none;
+    position: absolute;
+    top: 10px;
+    overflow-wrap: anywhere;
+}
+
+dialog.search-results {
+    .selected {
+        text-decoration: underline;
+
+        a {
+            color: #f0f0f0 !important;
+
+        }
+    }
+
+    padding: 0;
+    position: absolute;
+    text-align: start;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #414853;
+    border: 1px solid black;
+    z-index: 100;
+
+    /* display: none; */
+
+    /* flex-direction: column; */
+
+    /* justify-content: flex-start; */
+    min-width: 25vw;
+
+
+    > ul.search-results-primary {
+        width: 50%;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        max-height: inherit;
+        overflow-y: auto;
+
+        &.has-secondary {
+            border-right: 1px solid black;
+            width: 50%;
+        }
+
+        > li {
+            margin: 0;
+            padding: 0;
+
+            /*&::before {*/
+            /*    content: '▶';*/
+            /*    margin-right: 5px;*/
+            /*}*/
+
+            &.expanded {
+                > div.secondary {
+                    display: block;
+                }
+
+                /*&::before {*/
+                /*    content: '▼';*/
+                /*    margin-right: 5px;*/
+                /*}*/
+
+            }
+
+
+        }
+    }
+}

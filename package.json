@@ -1,0 +1,51 @@
+{
+  "name": "parcel-t",
+  "version": "1.0.0",
+  "description": "",
+  "staticFiles": {
+    "staticPath": "public"
+  },
+  "scripts": {
+    "clear:dist": "rimraf dist",
+    "start": "parcel src/index.html",
+    "build": "rimraf dist && parcel build src/index.html --no-source-maps --public-url ./",
+    "prettier:markup": "prettier src/**/*.html --check",
+    "prettier:markup:fix": "prettier src/**/*.html --write",
+    "prettier:style": "prettier src/**/*.scss --check",
+    "prettier:style:fix": "prettier src/**/*.scss --write",
+    "lint:styles": "stylelint src/styles/**/*.scss",
+    "lint:styles:fix": "stylelint src/styles/**/*.scss --fix",
+    "types": "tsc --noEmit",
+    "prettier:scripts": "prettier src/scripts/**/*.ts --check",
+    "prettier:scripts:fix": "prettier src/scripts/**/*.ts --write",
+    "lint:scripts": "eslint src/scripts/**/*.ts",
+    "lint:scripts:fix": "eslint src/scripts/**/*.ts --fix",
+    "lint": "npm run lint:styles && npm run lint:scripts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "diff-trees": "^1.0.0"
+  },
+  "devDependencies": {
+    "@parcel/config-default": "^2.12.0",
+    "@parcel/transformer-sass": "^2.12.0",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "parcel": "^2.12.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
+    "prettier": "^3.3.3",
+    "rimraf": "^5.0.9",
+    "stylelint": "^16.7.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-prettier": "^5.0.2",
+    "stylelint-scss": "^6.4.1",
+    "svgo": "^3.3.2",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.4"
+  }
+}

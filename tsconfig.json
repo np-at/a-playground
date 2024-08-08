@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    //    "verbatimModuleSyntax": true,
+    "moduleResolution": "Node",
+    "checkJs": false,
+    "allowJs": true,
+    "outDir": "tsc_out",
+    "noEmit": true,
+    "lib": ["DOM","ES2023","ESNext"]
+  },
+  "include": [
+    "src/**/*.?s"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
